@@ -41,29 +41,29 @@ function App () {
         <div>
           <h2>いつまでに欲しい？</h2>
           <select name="whencard" onChange={event => setSelectValue(event.target.value)}>
-            <option value="3day">3日以内</option>
-            <option value="1week">1週間以内</option>
-            <option value="2week">2週間以内</option>
+            <option value="3日以内">3日以内</option>
+            <option value="1週間以内">1週間以内</option>
+            <option value="2週間以内">2週間以内</option>
           </select>
         </div>
         <div>
           <h2>希望の国際ブランドは？</h2>
           JCB <input type="checkbox" value="jcb" onChange={handleCheckboxChange} /><br />
           VISA <input type="checkbox" value="visa" onChange={handleCheckboxChange} /><br />
-          Master Card <input type="checkbox" value="master_card" onChange={handleCheckboxChange} />
+          Master Card <input type="checkbox" value="mastercard" onChange={handleCheckboxChange} />
         </div>
         <div>
           <h2>ご自身の年齢は？</h2>
           <label>
-            <input type="radio" name="age" value="under25" checked={radioButtonValue === "under25"} onChange={handleRadioChange} />
+            <input type="radio" name="age" value="25歳以下" checked={radioButtonValue === "25歳以下"} onChange={handleRadioChange} />
             25歳以下
           </label>
           <label>
-            <input type="radio" name="age" value="25-35" checked={radioButtonValue === "25-35"} onChange={handleRadioChange} />
+            <input type="radio" name="age" value="25〜35歳" checked={radioButtonValue === "25〜35歳"} onChange={handleRadioChange} />
             25〜35歳
           </label>
           <label>
-            <input type="radio" name="age" value="35after" checked={radioButtonValue === "35after"} onChange={handleRadioChange} />
+            <input type="radio" name="age" value="35歳〜" checked={radioButtonValue === "35歳〜"} onChange={handleRadioChange} />
             35歳〜
           </label>
         </div>
