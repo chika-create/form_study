@@ -11,7 +11,7 @@ function App () {
     <section>
       <div>
         いつまでに欲しい？
-        <select>
+        <select onChange={event => setSelectValue(event.target.value)}>
           <option>3日以内</option>
           <option>1週間以内</option>
           <option>2週間以内</option>
