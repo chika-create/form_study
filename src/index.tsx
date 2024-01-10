@@ -8,6 +8,7 @@ function App () {
   const [checkValue, setCheckValue] = useState<string[]>([]);
   const [textBoxValue, setTextBoxValue] = useState<string>("");
 
+  // checkboxが変更された場合
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     const isChecked = event.target.checked;
@@ -22,6 +23,7 @@ function App () {
     }
   };
 
+  // textboxが変更された場合
   const handleTextBoxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTextBoxValue(event.target.value);
   }
@@ -30,7 +32,7 @@ function App () {
     <div>
       <section>
         <div>
-          いつまでに欲しい？
+          <h2>いつまでに欲しい？</h2>
           <select onChange={event => setSelectValue(event.target.value)}>
             <option>3日以内</option>
             <option>1週間以内</option>
@@ -47,10 +49,12 @@ function App () {
         </div>
       </section>
       <section>
-        <h2>選択された値：</h2>
-        <p>いつまでに欲しい？：{selectValue}</p>
-        <p>選択されたチェックボックス：{checkValue.join(", ")}</p>
-        <p>入力された内容：{textBoxValue}</p>
+        <h2>変更された値</h2>
+        <ul>
+          <li>いつまでに欲しい？：{selectValue}</li>
+          <li>選択されたチェックボックス：{checkValue.join(", ")}</li>
+          <li>入力された内容：{textBoxValue}</li>
+        </ul>
       </section>
     </div>
   );
