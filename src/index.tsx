@@ -6,7 +6,7 @@ import './index.css';
 function App () {
   const [selectValue, setSelectValue] = useState<string | null>(null);
   const [checkValue, setCheckValue] = useState<string[]>([]);
-  const [sextBoxValue, setTextBoxValue] = useState<string>("");
+  const [textBoxValue, setTextBoxValue] = useState<string>("");
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -43,14 +43,14 @@ function App () {
           Master Card <input type="checkbox" value="mastercard" onChange={handleCheckboxChange} />
         </div>
         <div>
-          <input type="text" />
+          <input type="text" value={textBoxValue} onChange={handleTextBoxChange} />
         </div>
       </section>
       <section>
         <h2>選択された値：</h2>
         <p>いつまでに欲しい？：{selectValue}</p>
         <p>選択されたチェックボックス：{checkValue.join(", ")}</p>
-        <p>入力された内容：</p>
+        <p>入力された内容：{textBoxValue}</p>
       </section>
     </div>
   );
