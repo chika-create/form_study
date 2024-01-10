@@ -7,6 +7,7 @@ function App () {
   const [selectValue, setSelectValue] = useState<string | null>(null);
   const [checkValue, setCheckValue] = useState<string[]>([]);
   const [textBoxValue, setTextBoxValue] = useState<string>("");
+  const [radioButtonValue, setRadioButtonValue] = useState<string>("");
 
   // checkboxが変更された場合
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,6 +27,11 @@ function App () {
   // textboxが変更された場合
   const handleTextBoxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTextBoxValue(event.target.value);
+  }
+
+  // ラジオボタンが変更された場合
+  const handleRadioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setRadioButtonValue(event.target.value);
   }
 
   return (
@@ -49,15 +55,15 @@ function App () {
         <div>
           <h2>ご自身の年齢は？</h2>
           <label>
-            <input type="radio" name="age" value="25歳以下" />
+            <input type="radio" name="age" value="25歳以下" checked={radioButtonValue === '25歳以下'} onChange={handleRadioChange} />
             25歳以下
           </label>
           <label>
-            <input type="radio" name="age" value="25〜35歳" />
+            <input type="radio" name="age" value="25〜35歳" checked={radioButtonValue === '25〜35歳'} onChange={handleRadioChange} />
             25〜35歳
           </label>
           <label>
-            <input type="radio" name="age" value="35歳〜" />
+            <input type="radio" name="age" value="35歳〜" checked={radioButtonValue === '35歳〜'} onChange={handleRadioChange} />
             35歳〜
           </label>
         </div>
@@ -71,7 +77,7 @@ function App () {
         <ul>
           <li>いつまでに欲しい？：{selectValue}</li>
           <li>選択されたチェックボックス：{checkValue.join(", ")}</li>
-          <li>選択されたラジオボタン：</li>
+          <li>選択されたラジオボタン：{radioButtonValue}</li>
           <li>感想に入力された内容：{textBoxValue}</li>
         </ul>
       </section>
