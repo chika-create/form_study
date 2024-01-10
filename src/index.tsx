@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
 
 function App () {
+  const [selectValue, setSelectValue] = useState<string | null>(null);
+  const [chackValue, setCheckValue] = useState<string | null>(null);
+
   return (
     <section>
       <div>
