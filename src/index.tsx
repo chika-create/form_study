@@ -49,15 +49,15 @@ function App () {
         <div>
           <h2>ご自身の年齢は？</h2>
           <label>
-            <input type="radio" value="25歳以下" />
+            <input type="radio" name="age" value="25歳以下" />
             25歳以下
           </label>
           <label>
-            <input type="radio" value="25〜35歳" />
+            <input type="radio" name="age" value="25〜35歳" />
             25〜35歳
           </label>
           <label>
-            <input type="radio" value="35歳〜" />
+            <input type="radio" name="age" value="35歳〜" />
             35歳〜
           </label>
         </div>
