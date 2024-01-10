@@ -5,7 +5,7 @@ import './index.css';
 
 function App () {
   const [selectValue, setSelectValue] = useState<string | null>(null);
-  const [chackValue, setCheckValue] = useState<string[]>([]);
+  const [checkValue, setCheckValue] = useState<string[]>([]);
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -22,21 +22,28 @@ function App () {
   };
 
   return (
-    <section>
-      <div>
-        いつまでに欲しい？
-        <select onChange={event => setSelectValue(event.target.value)}>
-          <option>3日以内</option>
-          <option>1週間以内</option>
-          <option>2週間以内</option>
-        </select>
-      </div>
-      <div>
-        JCB <input type="checkbox" value="jcb" onChange={handleCheckboxChange} /><br />
-        VISA <input type="checkbox" value="visa" onChange={handleCheckboxChange} /><br />
-        Master Card <input type="checkbox" value="mastercard" onChange={handleCheckboxChange} />
-      </div>
-    </section>
+    <div>
+      <section>
+        <div>
+          いつまでに欲しい？
+          <select onChange={event => setSelectValue(event.target.value)}>
+            <option>3日以内</option>
+            <option>1週間以内</option>
+            <option>2週間以内</option>
+          </select>
+        </div>
+        <div>
+          JCB <input type="checkbox" value="jcb" onChange={handleCheckboxChange} /><br />
+          VISA <input type="checkbox" value="visa" onChange={handleCheckboxChange} /><br />
+          Master Card <input type="checkbox" value="mastercard" onChange={handleCheckboxChange} />
+        </div>
+      </section>
+      <section>
+        <h2>選択された値：</h2>
+        <p>いつまでに欲しい？：{selectValue}</p>
+        <p>選択されたチェックボックス：{checkValue.join(", ")}</p>
+      </section>
+    </div>
   );
 }
 
