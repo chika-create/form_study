@@ -5,9 +5,21 @@ import './index.css';
 
 function App () {
   return (
-    <div className="App">
-      <h1>Hello, React with TypeScript</h1>
-    </div>
+    <section>
+      <div>
+        いつまでに欲しい？
+        <select>
+          <option>3日以内</option>
+          <option>1週間以内</option>
+          <option>2週間以内</option>
+        </select>
+      </div>
+      <div>
+        JCB <input type="checkbox" value="jcb" /><br />
+        VISA <input type="checkbox" value="visa" /><br />
+        Master Card <input type="checkbox" value="mastercard" />
+      </div>
+    </section>
   );
 }
 
