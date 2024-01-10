@@ -6,6 +6,7 @@ import './index.css';
 function App () {
   const [selectValue, setSelectValue] = useState<string | null>(null);
   const [checkValue, setCheckValue] = useState<string[]>([]);
+  const [sextBoxValue, setTextBoxValue] = useState<string>("");
 
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -20,6 +21,10 @@ function App () {
       setCheckValue(prevValues => prevValues.filter(item => item !== value));
     }
   };
+
+  const handleTextBoxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setTextBoxValue(event.target.value);
+  }
 
   return (
     <div>
