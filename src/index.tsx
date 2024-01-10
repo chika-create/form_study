@@ -37,11 +37,15 @@ function App () {
           VISA <input type="checkbox" value="visa" onChange={handleCheckboxChange} /><br />
           Master Card <input type="checkbox" value="mastercard" onChange={handleCheckboxChange} />
         </div>
+        <div>
+          <input type="text" />
+        </div>
       </section>
       <section>
         <h2>選択された値：</h2>
         <p>いつまでに欲しい？：{selectValue}</p>
         <p>選択されたチェックボックス：{checkValue.join(", ")}</p>
+        <p>入力された内容：</p>
       </section>
     </div>
   );
